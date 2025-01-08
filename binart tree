@@ -1,0 +1,47 @@
+# include<iostream>
+using namespace std;
+class BT
+{    public :
+
+    char data;
+    BT * Lchild;
+    BT * Rchild;
+    BT ( char d)
+    {
+        data = d;
+        Lchild =NULL;
+        Rchild = NULL;
+        
+    }
+};
+
+int main (){
+     BT * root =new BT('A');
+   // cout << "root is "<< root-> data;
+     
+     BT *second = new BT ('B');
+     root -> Lchild = second ;
+     
+     BT *third = new BT ('C');
+     root -> Rchild =third ;
+     
+     BT *fourth = new BT ('D');
+     root -> Lchild -> Lchild = fourth ;
+     
+     BT *fifth = new BT ('E');
+     root -> Lchild-> Rchild = fifth ;
+     
+     BT *sixth = new BT ('F');
+     root -> Rchild -> Rchild = sixth ;
+     
+     cout << " Binary Tree is : " <<endl;
+     cout << root -> data << " "<<endl;
+     cout << root -> Lchild -> data <<" "<<endl ;
+     cout << root -> Rchild -> data << " "<<endl;
+     cout << root -> Lchild -> Lchild -> data << " "<<endl;
+     cout << root -> Lchild -> Rchild -> data << " "<<endl;
+     cout << root -> Rchild -> Rchild -> data << " "<<endl;
+     
+     
+    return 0;
+}
